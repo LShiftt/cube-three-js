@@ -8,4 +8,5 @@ Un cube qui rotate
 // 5. Ajouter les objets dans la scène
 // 6. Démarrer la boucle d'animation
 
+npx vite
 npx vite build

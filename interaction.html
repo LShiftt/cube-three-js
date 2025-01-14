@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>TP1 Three.js</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link href="interaction.css" rel="stylesheet" />
+    <style></style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="interface">
+            <h2>Réglages</h2>
+            <label>
+                <input name="is_running" type="checkbox" />
+                Démarrer l'animation
+            </label>
+            <label>
+                Vitesse de la rotation :
+                <input name="speed_on_Y_axe" type="range" min="0" max="100" value="50" />
+            </label>
+            <label>
+                Couleur du cube :
+                <input name="color" type="color" value="#0000FF" />
+            </label>
+        </div>
+        <div class="three">
+            <div id="scene-container">
+                <!-- le canvas sera injecté ICI -->
+            </div>
+        </div>
+    </div>
+    <script type="module" src="interaction.js"></script>
+</body>
+
+</html>

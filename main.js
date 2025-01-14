@@ -9,6 +9,7 @@ let cube1;
 let cube2;
 let cube3;
 let sphere1;
+let time = 0;
 
 function main() {
   const container = document.querySelector("#scene-container");
@@ -38,7 +39,7 @@ function main() {
   createCube1();
   createCube2();
   createCube3();
-//   createSphere1();
+  //   createSphere1();
   helpers();
 
   // 6. Démarrer la boucle d'animation
@@ -57,10 +58,15 @@ function render() {
 /**
  * La boucle d'animation.
  */
-function animate() {
-    cube1.rotation.y += 0.02;
-  renderer.render(scene, camera);
+function animate(time) {
+  const timePasted = time * 0.001;
+  cube1.rotation.y += 0.05;
+  cube2.rotation.y += -0.03;
+  cube1.position.y = 75 * Math.abs(Math.sin(timePasted));
+  cube2.position.y = 50 * Math.abs(Math.sin(timePasted));
+  cube3.position.y = 25 * Math.abs(Math.sin(timePasted));
 
+  renderer.render(scene, camera);
 }
 
 /**
@@ -80,53 +86,53 @@ function helpers() {
  * Ajouter un cube dans la scène.
  */
 function createCube1() {
-  const geometry = new THREE.BoxGeometry(6, 6, 6,10,10,10);
+  const geometry = new THREE.BoxGeometry(6, 6, 6, 10, 10, 10);
   const material = new THREE.MeshPhongMaterial({
     color: "orange",
     wireframe: false,
   });
   cube1 = new THREE.Mesh(geometry, material);
-  cube1.position.set(-10,5,0)
+  cube1.position.set(-10, 5, 0)
   scene.add(cube1);
 }
 /**
  * Ajouter un cube dans la scène.
  */
 function createCube2() {
-    const geometry = new THREE.BoxGeometry(6, 6, 6,10,10,10);
-    const material = new THREE.MeshBasicMaterial({
-      color: "orange",
-      wireframe: false,
-    });
-    cube2 = new THREE.Mesh(geometry, material);
-    cube2.position.set(0,5,0)
-    scene.add(cube2);
-  }
-  /**
- * Ajouter un cube dans la scène.
- */
+  const geometry = new THREE.BoxGeometry(6, 6, 6, 10, 10, 10);
+  const material = new THREE.MeshBasicMaterial({
+    color: "orange",
+    wireframe: false,
+  });
+  cube2 = new THREE.Mesh(geometry, material);
+  cube2.position.set(0, 5, 0)
+  scene.add(cube2);
+}
+/**
+* Ajouter un cube dans la scène.
+*/
 function createCube3() {
-    const geometry = new THREE.BoxGeometry(6, 6, 6,10,10,10);
-    const material = new THREE.MeshLambertMaterial({
-      color: "orange",
-      wireframe: false,
-    });
-    cube3 = new THREE.Mesh(geometry, material);
-    cube3.position.set(10,5,0)
-    scene.add(cube3);
-  }
+  const geometry = new THREE.BoxGeometry(6, 6, 6, 10, 10, 10);
+  const material = new THREE.MeshLambertMaterial({
+    color: "orange",
+    wireframe: false,
+  });
+  cube3 = new THREE.Mesh(geometry, material);
+  cube3.position.set(10, 5, 0)
+  scene.add(cube3);
+}
 /**
  * Ajouter un cube dans la scène.
  */
 function createSphere1() {
-    const geometry = new THREE.SphereGeometry(5,50,50);
-    const material = new THREE.MeshBasicMaterial({
-      color: "blue",
-      wireframe: true,
-    });
-    sphere1 = new THREE.Mesh(geometry, material);
-    sphere1.position.set(0,0,0)
-    scene.add(sphere1);
-  }
+  const geometry = new THREE.SphereGeometry(5, 50, 50);
+  const material = new THREE.MeshBasicMaterial({
+    color: "blue",
+    wireframe: true,
+  });
+  sphere1 = new THREE.Mesh(geometry, material);
+  sphere1.position.set(0, 0, 0)
+  scene.add(sphere1);
+}
 
 main();

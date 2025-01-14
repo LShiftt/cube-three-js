@@ -23,5 +23,5 @@ h1 {
     Il faut reprendre le même réglage que celui que va imposer three.
     ainsi, on évite l'effet "flash" lorsque le canvas est injecté dan le DOM
     */
-  background-color: skyblue;
+  background-color: cornsilk;
 }

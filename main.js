@@ -15,7 +15,11 @@ function main() {
   const container = document.querySelector("#scene-container");
   // 1. Ajouter la scène
   scene = new THREE.Scene();
-  scene.background = new THREE.Color("cornsilk");
+  // scene.background = new THREE.Color("cornsilk");
+  const textureLoader = new THREE.TextureLoader();
+  const backgroundImage = textureLoader.load("./bg.jpg");
+  scene.background = backgroundImage;
+
   // 2. Mettre en place le rendu dans le canvas
   renderer = new THREE.WebGLRenderer();
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -92,7 +96,7 @@ function createCube1() {
     wireframe: false,
   });
   cube1 = new THREE.Mesh(geometry, material);
-  cube1.position.set(-10, 5, 0)
+  cube1.position.set(-10, 5, 0);
   scene.add(cube1);
 }
 /**
@@ -105,12 +109,12 @@ function createCube2() {
     wireframe: false,
   });
   cube2 = new THREE.Mesh(geometry, material);
-  cube2.position.set(0, 5, 0)
+  cube2.position.set(0, 5, 0);
   scene.add(cube2);
 }
 /**
-* Ajouter un cube dans la scène.
-*/
+ * Ajouter un cube dans la scène.
+ */
 function createCube3() {
   const geometry = new THREE.BoxGeometry(6, 6, 6, 10, 10, 10);
   const material = new THREE.MeshLambertMaterial({
@@ -118,7 +122,7 @@ function createCube3() {
     wireframe: false,
   });
   cube3 = new THREE.Mesh(geometry, material);
-  cube3.position.set(10, 5, 0)
+  cube3.position.set(10, 5, 0);
   scene.add(cube3);
 }
 /**
@@ -131,7 +135,7 @@ function createSphere1() {
     wireframe: true,
   });
   sphere1 = new THREE.Mesh(geometry, material);
-  sphere1.position.set(0, 0, 0)
+  sphere1.position.set(0, 0, 0);
   scene.add(sphere1);
 }
 

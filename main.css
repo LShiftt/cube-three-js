@@ -17,6 +17,7 @@ a {
 
   position: absolute;
   top: 20px;
+  left: 20px;
   width: 100%;
   z-index: 1;
 }

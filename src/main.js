@@ -4,16 +4,15 @@ import { World3D } from "./World3D/World3D.js";
 import { initSplineTexture } from "three/examples/jsm/Addons.js";
 
 function main() {
-    // cibler le conteneur du canvas
-    const container = document.querySelector('#scene-container');
-    // 1. Instancier la classe World
-    const world = new World3D(container, "Mars");
-    // 2. Déclencher l'actualisation de la scène
-    world.init();
-    world.start();
-    }
+  // cibler le conteneur du canvas
+  const container = document.querySelector("#scene-container");
+  // 1. Instancier la classe World
+  const world = new World3D(container, "Mars");
+  // 2. Déclencher l'actualisation de la scène
+  world.init();
+  world.start();
+}
 main();
-
 
 // // variables globales
 // let scene;
@@ -152,5 +151,3 @@ main();
 //   sphere1.position.set(0, 0, 0);
 //   scene.add(sphere1);
 // }
-
-
